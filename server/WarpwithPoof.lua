@@ -23,7 +23,9 @@ warpToPlayer = function(args)
 			local steamid = b:GetSteamId().id
 			local cantwarp = noWarpTable[steamid]
 			if not cantwarp then
+				-- Send the effect to everyone near you
 				Network:SendNearby(args.player, "PoofStart", args.player:GetPosition())
+					
 				Chat:Send(b, player:GetName() .." has warped to you.", Color(200, 50, 200))
 				Chat:Send(player, "You have warped to ".. b:GetName() ..".", Color(200, 50, 200))
 				local vector = b:GetPosition()
