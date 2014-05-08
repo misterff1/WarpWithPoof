@@ -2,7 +2,7 @@
 
 
 function PoofStart(pos)
-   ClientEffect.Play(AssetLocation.Game, { effect_id = 250, position = pos, angle = Angle() })
+   ClientEffect.Play(AssetLocation.Game, { effect_id = 250, position = pos, angle = Angle() }) -- Change the effect_id to use a different effect
 end
 
 Network:Subscribe("PoofStart", PoofStart)
